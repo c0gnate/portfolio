@@ -215,7 +215,8 @@ a {
   outline: none;
 }
 
-.project-card strong {
+.project-card-title {
+  display: block;
   font-family: var(--body-font);
   font-size: clamp(11px, 1vw, 13px);
   line-height: 1.1;
@@ -232,9 +233,7 @@ a {
   transition: opacity 160ms ease;
 }
 
-.project-card:hover strong,
 .project-card:hover span,
-.project-card:focus-visible strong,
 .project-card:focus-visible span {
   opacity: 1;
 }
