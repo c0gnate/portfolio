@@ -34,18 +34,6 @@ window.PORTFOLIO_GALLERIES = {
                                   "assets/cube-exchange/icecube_cube.png"
                               ],
     "assets/chads-wtf/":  [
-                              "assets/chads-wtf/12580.png",
-                              "assets/chads-wtf/15370.png",
-                              "assets/chads-wtf/20250611-1918-realistic-hooded-portrait-remix-01-jxg-3-c-64-mfj-68-rrprphnh-6-ahm0.png",
-                              "assets/chads-wtf/20250611-1924-photorealistic-man-recreation-remix-01-jxg-3-qet-6-e-0-vr-0-v-3-a-52-g-8-td-610.png",
-                              "assets/chads-wtf/20250611-1942-hyper-realistic-man-portrait-remix-01-jxg-4-r-3-h-4-eqpaptsx-2-rdc-8-wgr0.png",
-                              "assets/chads-wtf/20250611-1944-ginger-hair-disguise-remix-01-jxg-4-tw-5-bev-18-gf-90504-ctxw-30.png",
-                              "assets/chads-wtf/20250611-1947-realistic-bearded-character-remix-01-jxg-50-fzxeygrqtc-2-wfeb-03-vx0.png",
-                              "assets/chads-wtf/20250611-1948-realistic-portrait-transformation-remix-01-jxg-52-m-9-sf-74-btgw-4-d-1-czmaf-90.png",
-                              "assets/chads-wtf/57350.png",
-                              "assets/chads-wtf/60490.png",
-                              "assets/chads-wtf/84220.png",
-                              "assets/chads-wtf/96940.png",
                               "assets/chads-wtf/chadbot-69420-10.png",
                               "assets/chads-wtf/chadbot-69420-v-3-10.png",
                               "assets/chads-wtf/chad-chop0.png",
