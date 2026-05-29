@@ -271,7 +271,9 @@ a {
   opacity: 1;
 }
 
+.chads-card:hover .project-card-title,
 .chads-card:hover span,
+.chads-card:focus-visible .project-card-title,
 .chads-card:focus-visible span {
   color: var(--black);
 }
