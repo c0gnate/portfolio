@@ -334,7 +334,7 @@ a {
 
 .back-link:hover,
 .back-link:focus-visible {
-  color: #39ff14;
+  color: var(--yellow);
   outline: none;
 }
 
