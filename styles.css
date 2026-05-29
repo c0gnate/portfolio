@@ -559,24 +559,31 @@ a {
 
   .project-body .project-page {
     min-height: 100svh;
-    padding-bottom: calc((clamp(180px, 25svh, 230px) * 2) + clamp(12px, 3vw, 18px) + 26px);
+  }
+
+  .project-body .project-layout {
+    min-height: calc(100svh - 120px);
+    display: flex;
+    flex-direction: column;
   }
 
   .project-body .scroll-gallery {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 2;
+    flex: 1 1 auto;
     width: 100vw;
-    margin-left: 0;
+    min-height: calc((clamp(200px, 26svh, 250px) * 2) + clamp(12px, 3vw, 18px));
+    margin-top: 0;
+    margin-left: calc(50% - 50vw);
     padding: 0;
-    overflow-x: hidden;
+    display: flex;
+    align-items: flex-end;
+    overflow-x: auto;
   }
 
   .project-body .gallery-track {
+    height: auto;
     grid-template-rows: repeat(2, auto);
-    gap: 0;
+    gap: clamp(12px, 3vw, 18px);
+    align-items: stretch;
   }
 
   .project-body .gallery-row + .gallery-row {
@@ -586,10 +593,11 @@ a {
   .project-body .gallery-row {
     gap: clamp(12px, 3vw, 18px);
     align-items: flex-end;
+    min-height: 0;
   }
 
   .project-body .gallery-item {
-    height: clamp(180px, 25svh, 230px);
+    height: clamp(200px, 26svh, 250px);
   }
 
   .corner {
@@ -684,11 +692,19 @@ a {
   }
 
   .project-page {
-    padding: 30px 18px calc((clamp(176px, 24svh, 220px) * 2) + 12px + 24px);
+    padding: 30px 18px 0;
   }
 
   .project-layout {
     margin-top: 74px;
+  }
+
+  .project-body .project-layout {
+    min-height: calc(100svh - 104px);
+  }
+
+  .project-body .scroll-gallery {
+    min-height: calc((clamp(220px, 27.5svh, 240px) * 2) + 12px);
   }
 
   .project-intro {
@@ -696,6 +712,6 @@ a {
   }
 
   .project-body .gallery-item {
-    height: clamp(176px, 24svh, 220px);
+    height: clamp(220px, 27.5svh, 240px);
   }
 }
