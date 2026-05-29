@@ -106,7 +106,7 @@ a {
   --hero-title-size: 60vw;
   margin: 0;
   width: calc(100vw - clamp(28px, 5vw, 76px));
-  font-family: "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
+  font-family: "Bowlby One SC", "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
   font-size: var(--hero-title-size);
   line-height: 0.72;
   letter-spacing: 0;
