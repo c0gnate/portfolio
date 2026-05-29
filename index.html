@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en" class="home-scroll">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nate Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="home-body">
+    <main>
+      <section class="section hero" id="home" aria-label="Home">
+        <a class="corner top-right" href="https://x.com/c0gnate" target="_blank" rel="noopener noreferrer">@C0GNATE</a>
+        <h1 class="hero-title">Nate</h1>
+        <a class="scroll-note" href="#about">scroll down ↓</a>
+        <a class="corner bottom-left" href="mailto:thenateyouhate@gmail.com" target="_blank" rel="noopener noreferrer">THENATEYOUHATE@GMAIL.COM</a>
+        <div class="corner bottom-right">ENGLAND, UK</div>
+      </section>
+
+      <section class="section about-section" id="about" aria-label="Intro and skills">
+        <div class="about-copy">
+          <article class="copy-block">
+            <h2># Intro</h2>
+            <p>Web3-native designer/developer with experience building communities, content, and cultural identities for crypto projects across multiple ecosystems.</p>
+            <p>I specialise in turning early stage ideas into credible public facing brands through design, meme strategy, community engagement, social content, and product execution. My work has been shared and showcased by prominent figures and high engagement accounts including Toly &amp; Raj (Solana Founders), Vibhu (Drip Founder), Claynosaurs (Film Studio), Solmane (crypto OG), and many others. Placing my artwork/content in front of many millions of users.</p>
+            <p>I have contributed to project growth across NFTs, memecoins, exchanges, and community led brands, including helping Cube Exchange strengthen its community and social presence during a key growth period leading up to acquisition, with trading activity reaching approximately $15,000 fee volume daily, whilst bolstering social media engagement +60% reaching 100,000s of users.</p>
+            <p>I bring projects to life by combining creative direction, internet native content, community management, technical understanding, and fast execution.</p>
+          </article>
+
+          <article class="copy-block">
+            <h2># Key Strengths</h2>
+            <ul>
+              <li>Deep understanding of crypto-native culture and online communities.</li>
+              <li>Strong ability to create content that feels authentic, timely, and highly shareable.</li>
+              <li>Skilled at building hype without making communities feel forced or artificial.</li>
+              <li>Able to take rough ideas from concept to polished execution.</li>
+              <li>Comfortable working across design, content, community, product, and operations.</li>
+              <li>Fast-moving, adaptable, and effective in early-stage project environments.</li>
+            </ul>
+          </article>
+
+          <article class="copy-block">
+            <h2># Core Skills</h2>
+            <div class="skills-grid">
+              <div>
+                <h3>## Creative</h3>
+                <ul>
+                  <li>Creative Direction</li>
+                  <li>Graphic Design</li>
+                  <li>Brand Identity</li>
+                  <li>Motion Graphics</li>
+                  <li>Social Media First Content Design</li>
+                </ul>
+              </div>
+              <div>
+                <h3>## Technical</h3>
+                <ul>
+                  <li>Web Development</li>
+                  <li>HTML/CSS</li>
+                  <li>JavaScript/Python</li>
+                  <li>Basic Next.js/React Workflows</li>
+                  <li>Basic Blender/Unreal Engine</li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article class="copy-block">
+            <h2># Events &amp; Availability</h2>
+            <p>I am available for remote work, community campaigns, content creation, project launches, and ongoing Web3 roles.</p>
+            <p>I will also be in the country for <strong>Solana Breakpoint</strong>, making me available for in-person networking, meetings, event support and project representation opportunities around the event.</p>
+            <p>[References available on request.]</p>
+          </article>
+        </div>
+        <a class="scroll-note" href="#experience">scroll down ↓</a>
+      </section>
+
+      <section class="section projects-section" id="experience" aria-label="Professional experience">
+        <h2 class="projects-heading">Professional Experience</h2>
+        <div class="project-grid">
+          <a class="project-card cube-card" href="cube-exchange.html">
+            <strong>Cube Exchange</strong>
+            <span>Community, content &amp; growth</span>
+          </a>
+          <a class="project-card chads-card" href="chads-wtf.html">
+            <strong>CHADS.WTF</strong>
+            <span>NFT / Team member</span>
+          </a>
+          <a class="project-card yes-card" href="yes-coin.html">
+            <strong>$YES</strong>
+            <span>Coin / Content</span>
+          </a>
+          <a class="project-card mambo-card" href="mambo-coin.html">
+            <strong>$MAMBO</strong>
+            <span>Coin / Content lead</span>
+          </a>
+          <a class="project-card solkongz-card" href="solkongz.html">
+            <strong>SolKongz</strong>
+            <span>NFT / Creative director</span>
+          </a>
+          <a class="project-card turdles-card" href="turdles.html">
+            <strong>Turdles</strong>
+            <span>NFT / Design &amp; dev</span>
+          </a>
+        </div>
+        <a class="project-plus" href="independent-projects.html" aria-label="Open independent projects page">+</a>
+        <a class="scroll-note" href="#home">back to top ↑</a>
+        <a class="corner bottom-left" href="mailto:thenateyouhate@gmail.com" target="_blank" rel="noopener noreferrer">THENATEYOUHATE@GMAIL.COM</a>
+        <a class="corner bottom-right" href="https://x.com/c0gnate" target="_blank" rel="noopener noreferrer">@C0GNATE</a>
+      </section>
+
+    </main>
+    <script>
+      (() => {
+        const title = document.querySelector(".hero-title");
+        if (!title) return;
+
+        const fitTitle = () => {
+          title.style.setProperty("--hero-title-size", "60vw");
+          const available = title.clientWidth;
+          const measured = title.scrollWidth;
+          if (!available || !measured) return;
+          const current = parseFloat(getComputedStyle(title).fontSize);
+          const next = current * (available / measured);
+          title.style.setProperty("--hero-title-size", `${Math.min(next, window.innerWidth * 0.42)}px`);
+        };
+
+        window.addEventListener("resize", fitTitle);
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(fitTitle);
+        }
+        fitTitle();
+      })();
+
+      (() => {
+        const sections = Array.from(document.querySelectorAll("main > .section"));
+        if (!sections.length) return;
+
+        let locked = false;
+        let touchStartY = 0;
+
+        const nearestSectionIndex = () => {
+          const viewportCenter = window.innerHeight / 2;
+          let bestIndex = 0;
+          let bestDistance = Infinity;
+
+          sections.forEach((section, index) => {
+            const rect = section.getBoundingClientRect();
+            const sectionCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(sectionCenter - viewportCenter);
+            if (distance < bestDistance) {
+              bestDistance = distance;
+              bestIndex = index;
+            }
+          });
+
+          return bestIndex;
+        };
+
+        const snapBy = (direction) => {
+          if (locked || direction === 0) return;
+          const current = nearestSectionIndex();
+          const next = Math.max(0, Math.min(sections.length - 1, current + direction));
+          if (next === current) return;
+
+          locked = true;
+          sections[next].scrollIntoView({ behavior: "smooth", block: "center" });
+          window.setTimeout(() => {
+            locked = false;
+          }, 750);
+        };
+
+        window.addEventListener("wheel", (event) => {
+          if (Math.abs(event.deltaY) < 2) return;
+          event.preventDefault();
+          snapBy(event.deltaY > 0 ? 1 : -1);
+        }, { passive: false });
+
+        window.addEventListener("touchstart", (event) => {
+          touchStartY = event.changedTouches[0].clientY;
+        }, { passive: true });
+
+        window.addEventListener("touchend", (event) => {
+          const distance = touchStartY - event.changedTouches[0].clientY;
+          if (Math.abs(distance) < 24) return;
+          snapBy(distance > 0 ? 1 : -1);
+        }, { passive: true });
+
+        window.addEventListener("keydown", (event) => {
+          const nextKeys = ["ArrowDown", "PageDown", " "];
+          const previousKeys = ["ArrowUp", "PageUp"];
+
+          if (nextKeys.includes(event.key)) {
+            event.preventDefault();
+            snapBy(1);
+          }
+
+          if (previousKeys.includes(event.key)) {
+            event.preventDefault();
+            snapBy(-1);
+          }
+
+          if (event.key === "Home") {
+            event.preventDefault();
+            sections[0].scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+
+          if (event.key === "End") {
+            event.preventDefault();
+            sections[sections.length - 1].scrollIntoView({ behavior: "smooth", block: "center" });
+          }
+        });
+
+        document.querySelectorAll('a[href="#home"]').forEach((link) => {
+          link.addEventListener("click", (event) => {
+            event.preventDefault();
+            sections[0].scrollIntoView({ behavior: "smooth", block: "center" });
+          });
+        });
+      })();
+    </script>
+  </body>
+</html>
