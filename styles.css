@@ -271,6 +271,11 @@ a {
   opacity: 1;
 }
 
+.chads-card:hover span,
+.chads-card:focus-visible span {
+  color: var(--black);
+}
+
 .project-plus {
   width: clamp(28px, 3vw, 38px);
   height: clamp(28px, 3vw, 38px);
