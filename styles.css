@@ -201,22 +201,51 @@ a {
 }
 
 .project-card {
+  --project-image: none;
   aspect-ratio: 1 / 1;
   border: 1px solid var(--line);
   background: var(--yellow);
+  background-image: none;
+  background-position: center;
+  background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: clamp(14px, 1.6vw, 20px);
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 .project-card:hover,
 .project-card:focus-visible {
-  background: var(--black);
+  background-color: var(--black);
+  background-image: var(--project-image);
   color: var(--white);
   transform: translateY(-3px);
   outline: none;
+}
+
+.cube-card {
+  --project-image: url("./assets/cube.gif");
+}
+
+.chads-card {
+  --project-image: url("./assets/chads.jpg");
+}
+
+.yes-card {
+  --project-image: url("./assets/$YES.gif");
+}
+
+.mambo-card {
+  --project-image: url("./assets/mambo.gif");
+}
+
+.solkongz-card {
+  --project-image: url("./assets/solkongz.gif");
+}
+
+.turdles-card {
+  --project-image: url("./assets/turdles.gif");
 }
 
 .project-card-title {
