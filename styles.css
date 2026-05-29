@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "DrukWideBoldLocal";
+  src: url("./druk-wide-bold/DrukWideBold.ttf?v=3") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --yellow: #f7931a;
   --black: #030303;
@@ -7,14 +15,6 @@
   --project-line: rgba(245, 245, 242, 0.22);
   --body-font: "Lucida Sans Typewriter Regular", "Lucida Sans Typewriter", "Lucida Console", Monaco, monospace;
   --heading-font: "Lucida Sans Demibold Roman", "Lucida Sans", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
-
-@font-face {
-  font-family: "Druk Extra Wide";
-  src: url("druk-wide-bold/DrukWideBold.ttf") format("truetype");
-  font-weight: 700;
-  font-style: normal;
-  font-display: swap;
 }
 
 * {
@@ -114,7 +114,9 @@ a {
   --hero-title-size: 60vw;
   margin: 0;
   width: calc(100vw - clamp(28px, 5vw, 76px));
-  font-family: "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
+  font-family: "DrukWideBoldLocal", "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
+  font-weight: 700;
+  font-synthesis: none;
   font-size: var(--hero-title-size);
   line-height: 0.72;
   letter-spacing: 0;
