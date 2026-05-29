@@ -133,8 +133,9 @@ a {
 }
 
 .about-copy {
-  width: min(930px, 74vw);
+  width: min(1008px, 80vw);
   margin-top: 4vh;
+  font-size: 13px;
 }
 
 .copy-block {
@@ -144,7 +145,7 @@ a {
 .copy-block h2,
 .copy-block h3 {
   margin: 0 0 12px;
-  font-size: 12px;
+  font-size: inherit;
   line-height: 1.15;
 }
 
