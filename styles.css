@@ -557,7 +557,7 @@ a {
 
   .project-body .project-page {
     min-height: 100svh;
-    padding-bottom: calc(clamp(230px, 34svh, 320px) + 26px);
+    padding-bottom: calc((clamp(112px, 16svh, 150px) * 2) + clamp(12px, 3vw, 18px) + 26px);
   }
 
   .project-body .scroll-gallery {
@@ -573,7 +573,12 @@ a {
   }
 
   .project-body .gallery-track {
+    grid-template-rows: repeat(2, auto);
     gap: 0;
+  }
+
+  .project-body .gallery-row + .gallery-row {
+    display: flex;
   }
 
   .project-body .gallery-row {
@@ -582,7 +587,7 @@ a {
   }
 
   .project-body .gallery-item {
-    height: clamp(230px, 34svh, 320px);
+    height: clamp(112px, 16svh, 150px);
   }
 
   .corner {
@@ -677,7 +682,7 @@ a {
   }
 
   .project-page {
-    padding: 30px 18px calc(clamp(210px, 32svh, 280px) + 24px);
+    padding: 30px 18px calc((clamp(104px, 15svh, 138px) * 2) + 12px + 24px);
   }
 
   .project-layout {
@@ -689,6 +694,6 @@ a {
   }
 
   .project-body .gallery-item {
-    height: clamp(210px, 32svh, 280px);
+    height: clamp(104px, 15svh, 138px);
   }
 }
