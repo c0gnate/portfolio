@@ -136,6 +136,9 @@ a {
   width: min(1050px, 83vw);
   margin-top: 4vh;
   font-size: 13.5px;
+  color: #000;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
 }
 
 .copy-block {
