@@ -133,9 +133,9 @@ a {
 }
 
 .about-copy {
-  width: min(1008px, 80vw);
+  width: min(1050px, 83vw);
   margin-top: 4vh;
-  font-size: 13px;
+  font-size: 13.5px;
 }
 
 .copy-block {
