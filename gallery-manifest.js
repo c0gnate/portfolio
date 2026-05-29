@@ -1,4 +1,4 @@
-﻿window.PORTFOLIO_GALLERIES = {
+window.PORTFOLIO_GALLERIES = {
     "assets/cube-exchange/":  [
                                   "assets/cube-exchange/20250730_1302_Cube with Logo_remix_01k1dka62hejkshhfepk0trn4a.png",
                                   "assets/cube-exchange/cube_alsocube.png",
@@ -30,18 +30,18 @@
                                   "assets/cube-exchange/icecube_cube.png"
                               ],
     "assets/chads-wtf/":  [
-                              "assets/chads-wtf/_12580.png",
-                              "assets/chads-wtf/_15370.png",
-                              "assets/chads-wtf/_20250611-1918-realistic-hooded-portrait-remix-01-jxg-3-c-64-mfj-68-rrprphnh-6-ahm0.png",
-                              "assets/chads-wtf/_20250611-1924-photorealistic-man-recreation-remix-01-jxg-3-qet-6-e-0-vr-0-v-3-a-52-g-8-td-610.png",
-                              "assets/chads-wtf/_20250611-1942-hyper-realistic-man-portrait-remix-01-jxg-4-r-3-h-4-eqpaptsx-2-rdc-8-wgr0.png",
-                              "assets/chads-wtf/_20250611-1944-ginger-hair-disguise-remix-01-jxg-4-tw-5-bev-18-gf-90504-ctxw-30.png",
-                              "assets/chads-wtf/_20250611-1947-realistic-bearded-character-remix-01-jxg-50-fzxeygrqtc-2-wfeb-03-vx0.png",
-                              "assets/chads-wtf/_20250611-1948-realistic-portrait-transformation-remix-01-jxg-52-m-9-sf-74-btgw-4-d-1-czmaf-90.png",
-                              "assets/chads-wtf/_57350.png",
-                              "assets/chads-wtf/_60490.png",
-                              "assets/chads-wtf/_84220.png",
-                              "assets/chads-wtf/_96940.png",
+                              "assets/chads-wtf/12580.png",
+                              "assets/chads-wtf/15370.png",
+                              "assets/chads-wtf/20250611-1918-realistic-hooded-portrait-remix-01-jxg-3-c-64-mfj-68-rrprphnh-6-ahm0.png",
+                              "assets/chads-wtf/20250611-1924-photorealistic-man-recreation-remix-01-jxg-3-qet-6-e-0-vr-0-v-3-a-52-g-8-td-610.png",
+                              "assets/chads-wtf/20250611-1942-hyper-realistic-man-portrait-remix-01-jxg-4-r-3-h-4-eqpaptsx-2-rdc-8-wgr0.png",
+                              "assets/chads-wtf/20250611-1944-ginger-hair-disguise-remix-01-jxg-4-tw-5-bev-18-gf-90504-ctxw-30.png",
+                              "assets/chads-wtf/20250611-1947-realistic-bearded-character-remix-01-jxg-50-fzxeygrqtc-2-wfeb-03-vx0.png",
+                              "assets/chads-wtf/20250611-1948-realistic-portrait-transformation-remix-01-jxg-52-m-9-sf-74-btgw-4-d-1-czmaf-90.png",
+                              "assets/chads-wtf/57350.png",
+                              "assets/chads-wtf/60490.png",
+                              "assets/chads-wtf/84220.png",
+                              "assets/chads-wtf/96940.png",
                               "assets/chads-wtf/chadbot-69420-10.png",
                               "assets/chads-wtf/chadbot-69420-v-3-10.png",
                               "assets/chads-wtf/chad-chop0.png",
@@ -96,7 +96,7 @@
                               "assets/chads-wtf/trump-10.png"
                           ],
     "assets/yes-coin/":  [
-                             "assets/yes-coin/_1013-10.png",
+                             "assets/yes-coin/1013-10.png",
                              "assets/yes-coin/areyawinningchad-10.png",
                              "assets/yes-coin/backtothe-ye-10.png",
                              "assets/yes-coin/cha-dchart-10.png",
@@ -165,7 +165,7 @@
                                "assets/mambo-coin/zer-ov-3-10.png"
                            ],
     "assets/solkongz/":  [
-                             "assets/solkongz/_6358359-a-8-c-87-f-0848-e-054151-unkno-5668-wn-10.png",
+                             "assets/solkongz/6358359-a-8-c-87-f-0848-e-054151-unkno-5668-wn-10.png",
                              "assets/solkongz/container21.png",
                              "assets/solkongz/container23.png",
                              "assets/solkongz/container24.png",
@@ -191,11 +191,11 @@
                              "assets/solkongz/yacht-club-10.png"
                          ],
     "assets/turdles/":  [
-                            "assets/turdles/_15-10.png",
-                            "assets/turdles/_20250606-2226-turtle-cleaning-beach-remix-01-jx-3-j-53-dafz-191-brd-9-r-0-gtc-76-10.png",
-                            "assets/turdles/_20250606-2230-turtle-beach-cleanup-remix-01-jx-3-jb-9-bae-4-n-806-wxp-417-mne-5-10.png",
-                            "assets/turdles/_20250607-0005-turtle-with-rifle-remix-01-jx-3-qs-1-djf-0-x-9-ef-197101-r-9-vk-10.png",
-                            "assets/turdles/_244-10.png",
+                            "assets/turdles/15-10.png",
+                            "assets/turdles/20250606-2226-turtle-cleaning-beach-remix-01-jx-3-j-53-dafz-191-brd-9-r-0-gtc-76-10.png",
+                            "assets/turdles/20250606-2230-turtle-beach-cleanup-remix-01-jx-3-jb-9-bae-4-n-806-wxp-417-mne-5-10.png",
+                            "assets/turdles/20250607-0005-turtle-with-rifle-remix-01-jx-3-qs-1-djf-0-x-9-ef-197101-r-9-vk-10.png",
+                            "assets/turdles/244-10.png",
                             "assets/turdles/gib-hug-pls-png-10.png",
                             "assets/turdles/gigaturd-b-w-10.png",
                             "assets/turdles/higher-btc-10.png",
@@ -235,7 +235,7 @@
                                          "assets/independent-projects/$BALDwindows.png",
                                          "assets/independent-projects/$GBALD[JOE\u0026MARC]v2.png",
                                          "assets/independent-projects/$GBALD[TATE].png",
-                                         "assets/independent-projects/_6-n-4-re-70.png",
+                                         "assets/independent-projects/6-n-4-re-70.png",
                                          "assets/independent-projects/8ulf7x.png",
                                          "assets/independent-projects/areyou$BALDyetson.jpg",
                                          "assets/independent-projects/average$BALDholder.png",
