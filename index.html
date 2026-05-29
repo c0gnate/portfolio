@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nate Portfolio</title>
-    <link rel="stylesheet" href="./styles.css?v=8">
+    <link rel="stylesheet" href="./styles.css?v=9">
   </head>
   <body class="home-body">
     <main>
@@ -115,13 +115,15 @@
         if (!title) return;
 
         const fitTitle = () => {
-          title.style.setProperty("--hero-title-size", "60vw");
+          const isPhoneTitle = window.matchMedia("(max-width: 520px)").matches;
+          title.style.setProperty("--hero-title-size", isPhoneTitle ? "16vw" : "60vw");
           const available = title.clientWidth;
           const measured = title.scrollWidth;
           if (!available || !measured) return;
           const current = parseFloat(getComputedStyle(title).fontSize);
           const next = current * (available / measured);
-          title.style.setProperty("--hero-title-size", `${Math.min(next, window.innerWidth * 0.42)}px`);
+          const mobileTitleScale = isPhoneTitle ? 0.15 : 0.42;
+          title.style.setProperty("--hero-title-size", `${Math.min(next, window.innerWidth * mobileTitleScale)}px`);
         };
 
         window.addEventListener("resize", fitTitle);
@@ -134,6 +136,8 @@
       (() => {
         const sections = Array.from(document.querySelectorAll("main > .section"));
         if (!sections.length) return;
+        const mobileScroll = window.matchMedia("(max-width: 860px)");
+        if (mobileScroll.matches) return;
 
         let locked = false;
         let touchStartY = 0;

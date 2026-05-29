@@ -452,27 +452,65 @@ a {
 }
 
 @media (max-width: 860px) {
+  html.home-scroll {
+    scroll-snap-type: none;
+  }
+
   body {
     font-size: 11px;
+    overflow-x: hidden;
+  }
+
+  .home-body .section {
+    scroll-snap-align: none;
+    scroll-snap-stop: normal;
+  }
+
+  .section {
+    min-height: auto;
+    overflow: visible;
   }
 
   .hero {
     align-items: center;
+    min-height: 100svh;
   }
 
   .hero-title {
+    --hero-title-size: 43vw;
     width: calc(100vw - 32px);
   }
 
-  .about-copy,
+  .about-copy {
+    width: min(100%, 680px);
+    margin-top: 0;
+    font-size: 12px;
+    line-height: 1.23;
+  }
+
   .more-wrap,
   .project-layout {
     width: min(100%, 650px);
   }
 
+  .about-section {
+    align-items: flex-start;
+    min-height: auto;
+    padding-top: 48px;
+    padding-bottom: 76px;
+  }
+
+  .copy-block {
+    margin-bottom: 20px;
+  }
+
   .projects-section {
     grid-template-columns: 1fr;
-    align-content: center;
+    align-content: start;
+    min-height: auto;
+    padding-top: 56px;
+    padding-bottom: 86px;
+    gap: 28px;
   }
 
   .projects-heading {
@@ -519,10 +557,11 @@ a {
 
 @media (max-width: 520px) {
   .section {
-    padding: 22px 16px;
+    padding: 24px 16px;
   }
 
   .hero-title {
+    --hero-title-size: 16vw;
     width: calc(100vw - 24px);
     line-height: 0.8;
   }
@@ -546,12 +585,51 @@ a {
     bottom: 26px;
   }
 
+  .about-section {
+    padding-top: 42px;
+    padding-bottom: 72px;
+  }
+
+  .about-copy {
+    font-size: 11.5px;
+    line-height: 1.24;
+  }
+
+  .copy-block {
+    margin-bottom: 18px;
+  }
+
+  .skills-grid {
+    gap: 18px;
+  }
+
+  .projects-section {
+    padding-top: 46px;
+    padding-bottom: 78px;
+    gap: 24px;
+  }
+
+  .projects-heading {
+    font-size: clamp(25px, 10vw, 38px);
+  }
+
   .project-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 
   .project-card {
     aspect-ratio: 1 / 1;
+    min-height: 0;
+    padding: 12px;
+  }
+
+  .project-card-title {
+    font-size: 10px;
+  }
+
+  .project-card span {
+    display: none;
   }
 
   .back-link {
