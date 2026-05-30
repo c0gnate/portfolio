@@ -137,7 +137,7 @@ a {
   width: min(1080px, 70vw);
   max-width: min(1080px, calc(100vw - clamp(48px, 14vw, 360px)));
   transform: translate(
-    calc(-1 * clamp(12px, 1.2vw, 24px)),
+    calc(-1 * clamp(1px, 0.12vw, 3px)),
     calc(-1 * clamp(60px, 8.2vh, 106px))
   );
   font-family: "DrukWideBoldLocal", "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
@@ -163,7 +163,7 @@ a {
   display: grid;
   grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
   gap: 2px;
-  font-size: clamp(8px, min(0.55vw, 0.95vh), 12px);
+  font-size: clamp(9px, min(0.66vw, 1.08vh), 13.5px);
   line-height: 1.14;
   color: #000;
   text-shadow: none;
