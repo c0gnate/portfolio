@@ -27,6 +27,19 @@
     }
   };
 
+  const getImageSrc = (src) => {
+    try {
+      const url = new URL(src, window.location.href);
+      url.pathname = url.pathname
+        .split("/")
+        .map((part) => encodeURIComponent(decodeURIComponent(part)))
+        .join("/");
+      return url.href;
+    } catch {
+      return src;
+    }
+  };
+
   const buildGallery = (gallery, files) => {
     gallery.textContent = "";
 
@@ -57,7 +70,7 @@
       frame.className = "gallery-item";
 
       const image = document.createElement("img");
-      image.src = src;
+      image.src = getImageSrc(src);
       image.alt = "";
       image.loading = "lazy";
 
