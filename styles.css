@@ -95,7 +95,7 @@ a {
 .contact-button:hover,
 .contact-button:focus-visible {
   background: var(--black);
-  color: var(--yellow);
+  color: var(--white);
   transform: translateY(-2px);
   outline: none;
 }
@@ -597,11 +597,11 @@ a {
 .contact-body {
   min-height: 100vh;
   background:
-    linear-gradient(rgba(245, 245, 242, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(245, 245, 242, 0.035) 1px, transparent 1px),
-    #080808;
+    linear-gradient(rgba(3, 3, 3, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(3, 3, 3, 0.035) 1px, transparent 1px),
+    #ffffff;
   background-size: 18px 18px;
-  color: var(--white);
+  color: var(--black);
   overflow: hidden;
 }
 
