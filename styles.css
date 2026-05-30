@@ -123,18 +123,19 @@ a {
 .hero {
   display: grid;
   grid-template-rows: auto auto;
-  align-content: start;
+  align-content: center;
   justify-items: center;
   gap: clamp(8px, 1.4vh, 18px);
   min-height: 100svh;
-  padding-top: clamp(56px, 9vh, 98px);
+  padding-top: clamp(56px, 8vh, 92px);
   padding-bottom: clamp(72px, 7.5vh, 104px);
   border: 1px solid var(--black);
 }
 
 .hero-title {
   margin: 0;
-  max-width: min(1040px, calc(100vw - clamp(48px, 14vw, 360px)));
+  width: min(1080px, 70vw);
+  max-width: min(1080px, calc(100vw - clamp(48px, 14vw, 360px)));
   font-family: "DrukWideBoldLocal", "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
   font-weight: 700;
   font-synthesis: none;
@@ -142,13 +143,14 @@ a {
   line-height: 0.72;
   letter-spacing: 0;
   text-transform: none;
-  text-align: center;
+  text-align: left;
   white-space: nowrap;
 }
 
 .hero-copy {
   width: min(1080px, 70vw);
   align-self: start;
+  transform: translateY(calc(-1 * clamp(52px, 8vh, 108px)));
 }
 
 .hero .about-copy {
@@ -185,8 +187,8 @@ a {
 .hero .copy-block:nth-child(3) {
   grid-column: 2;
   grid-row: 1;
-  font-size: clamp(13px, min(1vw, 1.7vh), 22px);
-  line-height: 1.18;
+  font-size: clamp(10px, min(0.78vw, 1.28vh), 16px);
+  line-height: 1.12;
 }
 
 .hero .copy-block:nth-child(4) {
@@ -210,7 +212,23 @@ a {
 }
 
 .hero .skills-grid {
-  gap: clamp(20px, 5vw, 84px);
+  gap: clamp(16px, 4vw, 58px);
+  align-items: start;
+}
+
+.hero .copy-block:nth-child(3) ul {
+  display: grid;
+  gap: clamp(5px, 0.55vh, 8px);
+}
+
+.hero .copy-block:nth-child(3) li {
+  border: 1px solid rgba(3, 3, 3, 0.82);
+  padding: clamp(3px, 0.28vw, 5px) clamp(5px, 0.45vw, 8px);
+  line-height: 1.05;
+}
+
+.hero .copy-block:nth-child(3) li::before {
+  content: none;
 }
 
 .about-section {
@@ -772,7 +790,7 @@ a {
   }
 
   .hero {
-    align-content: start;
+    align-content: center;
     gap: 10px;
     min-height: 100svh;
     padding-top: clamp(30px, 5vh, 52px);
@@ -780,12 +798,14 @@ a {
   }
 
   .hero-title {
+    width: min(100%, 740px);
     max-width: calc(100vw - 34px);
     font-size: clamp(82px, min(21vw, 17vh), 170px);
   }
 
   .hero-copy {
     width: min(100%, 740px);
+    transform: none;
   }
 
   .hero .about-copy {
@@ -806,6 +826,10 @@ a {
   .hero .copy-block:nth-child(3) {
     font-size: inherit;
     line-height: inherit;
+  }
+
+  .hero .copy-block:nth-child(3) ul {
+    gap: 5px;
   }
 
   .about-copy {
@@ -948,6 +972,7 @@ a {
   }
 
   .hero-title {
+    width: 100%;
     max-width: calc(100vw - 24px);
     font-size: clamp(60px, min(22vw, 13vh), 96px);
     line-height: 0.8;
