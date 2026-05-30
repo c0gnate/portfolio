@@ -367,6 +367,16 @@ a {
   margin: 0 0 12px;
 }
 
+.independent-body .project-intro a {
+  color: #0057ff;
+}
+
+.independent-body .project-intro a:hover,
+.independent-body .project-intro a:focus-visible {
+  color: #4f8cff;
+  outline: none;
+}
+
 .project-intro ul {
   list-style: none;
   padding: 0;
