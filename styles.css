@@ -125,7 +125,7 @@ a {
   grid-template-rows: auto auto;
   align-content: center;
   justify-items: center;
-  gap: clamp(8px, 1.4vh, 18px);
+  gap: clamp(3px, 0.8vh, 10px);
   min-height: 100svh;
   padding-top: clamp(56px, 8vh, 92px);
   padding-bottom: clamp(72px, 7.5vh, 104px);
@@ -136,10 +136,11 @@ a {
   margin: 0;
   width: min(1080px, 70vw);
   max-width: min(1080px, calc(100vw - clamp(48px, 14vw, 360px)));
+  transform: translateY(calc(-1 * clamp(60px, 8.2vh, 106px)));
   font-family: "DrukWideBoldLocal", "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
   font-weight: 700;
   font-synthesis: none;
-  font-size: clamp(104px, min(19vw, 24vh), 270px);
+  font-size: clamp(96px, min(16vw, 18vh), 220px);
   line-height: 0.72;
   letter-spacing: 0;
   text-transform: none;
@@ -150,7 +151,7 @@ a {
 .hero-copy {
   width: min(1080px, 70vw);
   align-self: start;
-  transform: translateY(calc(-1 * clamp(52px, 8vh, 108px)));
+  transform: translateY(calc(-1 * clamp(60px, 8.2vh, 106px)));
 }
 
 .hero .about-copy {
@@ -187,6 +188,7 @@ a {
 .hero .copy-block:nth-child(3) {
   grid-column: 2;
   grid-row: 1;
+  border: 0;
   font-size: clamp(10px, min(0.78vw, 1.28vh), 16px);
   line-height: 1.12;
 }
@@ -801,6 +803,7 @@ a {
     width: min(100%, 740px);
     max-width: calc(100vw - 34px);
     font-size: clamp(82px, min(21vw, 17vh), 170px);
+    transform: none;
   }
 
   .hero-copy {
