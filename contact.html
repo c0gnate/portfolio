@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact - Nate Portfolio</title>
+    <link rel="stylesheet" href="styles.css?v=20">
+  </head>
+  <body class="contact-body">
+    <a class="back-link" href="index.html#home">&lt; BACK</a>
+    <main class="contact-page" aria-label="Contact information">
+      <section class="business-card" aria-label="Nate contact card">
+        <div class="card-kicker">Portfolio Contact</div>
+        <h1 class="card-name">Nate</h1>
+        <div class="card-role">Designer / Developer</div>
+        <div class="card-links">
+          <a href="mailto:thenateyouhate@gmail.com">thenateyouhate@gmail.com</a>
+          <a href="https://x.com/c0gnate" target="_blank" rel="noopener noreferrer">@C0GNATE</a>
+          <span>England, UK</span>
+        </div>
+      </section>
+    </main>
+    <script>
+      (() => {
+        const card = document.querySelector(".business-card");
+        if (!card) return;
+
+        const setTilt = (event) => {
+          const rect = card.getBoundingClientRect();
+          const x = (event.clientX - rect.left) / rect.width - 0.5;
+          const y = (event.clientY - rect.top) / rect.height - 0.5;
+          card.style.setProperty("--tilt-x", `${(-y * 7).toFixed(2)}deg`);
+          card.style.setProperty("--tilt-y", `${(x * 9).toFixed(2)}deg`);
+        };
+
+        const resetTilt = () => {
+          card.style.setProperty("--tilt-x", "0deg");
+          card.style.setProperty("--tilt-y", "0deg");
+        };
+
+        window.addEventListener("mousemove", setTilt);
+        window.addEventListener("mouseleave", resetTilt);
+      })();
+    </script>
+  </body>
+</html>
