@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nate Portfolio</title>
-    <link rel="stylesheet" href="./styles.css?v=30">
+    <link rel="stylesheet" href="./styles.css?v=37">
   </head>
   <body class="home-body">
     <main>
@@ -74,47 +74,111 @@
         <div class="project-grid">
           <a class="project-card cube-card" href="cube-exchange.html">
             <strong class="project-card-title">Cube Exchange</strong>
+            <small class="project-date">2025 - 2026</small>
             <span>Community, content &amp; growth</span>
           </a>
           <a class="project-card chads-card" href="chads-wtf.html">
             <strong class="project-card-title">CHADS.WTF</strong>
+            <small class="project-date">2023 - Present</small>
             <span>NFT / Team member</span>
           </a>
           <a class="project-card yes-card" href="yes-coin.html">
             <strong class="project-card-title">$YES</strong>
+            <small class="project-date">CIRCA 2024</small>
             <span>Coin / Content</span>
           </a>
           <a class="project-card mambo-card" href="mambo-coin.html">
             <strong class="project-card-title">$MAMBO</strong>
+            <small class="project-date">CIRCA 2025</small>
             <span>Coin / Content lead</span>
           </a>
           <a class="project-card solkongz-card" href="solkongz.html">
             <strong class="project-card-title">SolKongz</strong>
+            <small class="project-date">CIRCA 2021</small>
             <span>NFT / Creative director</span>
           </a>
           <a class="project-card turdles-card" href="turdles.html">
             <strong class="project-card-title">Turdles</strong>
+            <small class="project-date">CIRCA 2025</small>
             <span>NFT / Design &amp; dev</span>
           </a>
         </div>
         <a class="project-plus" href="independent-projects.html" aria-label="Open independent projects page">+</a>
         <a class="scroll-note" href="#home">back to top ↑</a>
-        <div class="corner bottom-left">ENGLAND, UK</div>
+        <div class="corner bottom-left">NATE</div>
         <a class="corner bottom-right contact-button" href="contact.html">CONTACT</a>
       </section>
 
     </main>
+    <div class="project-preview" aria-hidden="true"></div>
     <script>
       (() => {
-        const projectCards = document.querySelectorAll(".project-card");
-        projectCards.forEach((card) => {
-          const updatePreviewPosition = (event) => {
-            card.style.setProperty("--preview-x", `${event.clientX}px`);
-            card.style.setProperty("--preview-y", `${event.clientY}px`);
-          };
+        const clickSound = new Audio("./assets/sounds/click.mp3");
+        clickSound.preload = "auto";
 
-          card.addEventListener("pointerenter", updatePreviewPosition);
-          card.addEventListener("pointermove", updatePreviewPosition);
+        const playClickSound = () => {
+          const sound = clickSound.cloneNode();
+          sound.volume = 0.72;
+          sound.play().catch(() => {});
+        };
+
+        const projectCards = document.querySelectorAll(".project-card");
+        const projectPreview = document.querySelector(".project-preview");
+        let activeProjectCard = null;
+
+        const updatePreviewPosition = (event) => {
+          if (!projectPreview) return;
+          const rect = projectPreview.getBoundingClientRect();
+          const gap = 18;
+          const margin = 12;
+          const width = rect.width || 330;
+          const height = rect.height || width;
+          const maxX = window.innerWidth - width - margin;
+          const maxY = window.innerHeight - height - margin;
+          const x = Math.min(event.clientX + gap, maxX);
+          const y = Math.min(Math.max(event.clientY - gap, margin), maxY);
+          projectPreview.style.setProperty("--preview-x", `${x}px`);
+          projectPreview.style.setProperty("--preview-y", `${y}px`);
+        };
+
+        const clearProjectPreview = () => {
+          if (activeProjectCard) {
+            activeProjectCard.classList.remove("is-previewing");
+            activeProjectCard = null;
+          }
+          if (projectPreview) {
+            projectPreview.classList.remove("is-visible");
+          }
+        };
+
+        const showProjectPreview = (card, event) => {
+          if (activeProjectCard !== card) {
+            if (activeProjectCard) {
+              activeProjectCard.classList.remove("is-previewing");
+            }
+            activeProjectCard = card;
+            card.classList.add("is-previewing");
+            if (projectPreview) {
+              const image = getComputedStyle(card).getPropertyValue("--project-image").trim();
+              projectPreview.style.backgroundImage = image;
+              projectPreview.classList.add("is-visible");
+            }
+            playClickSound();
+          }
+          updatePreviewPosition(event);
+        };
+
+        document.addEventListener("pointermove", (event) => {
+          const card = event.target instanceof Element ? event.target.closest(".project-card") : null;
+          if (!card) {
+            clearProjectPreview();
+            return;
+          }
+          showProjectPreview(card, event);
+        });
+
+        document.querySelectorAll("a, button").forEach((control) => {
+          control.addEventListener("click", playClickSound);
         });
       })();
 
