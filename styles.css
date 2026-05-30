@@ -722,9 +722,19 @@ a {
 
 .contact-body {
   min-height: 100vh;
-  background: #ffffff;
+  background: #d2d2d2;
   color: var(--black);
   overflow: hidden;
+}
+
+.contact-body .back-link {
+  color: var(--accent-orange);
+}
+
+.contact-body .back-link:hover,
+.contact-body .back-link:focus-visible {
+  color: var(--black);
+  outline: none;
 }
 
 .contact-page {
