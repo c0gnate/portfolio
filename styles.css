@@ -94,6 +94,28 @@ a {
   transition: background 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
+.availability-button {
+  padding: 7px 12px 6px;
+  border: 1px solid var(--black);
+  background: var(--black);
+  color: var(--white);
+  font: inherit;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.availability-button:hover,
+.availability-button:focus-visible,
+.availability-control:hover .availability-button,
+.availability-control:focus-within .availability-button {
+  background: var(--accent-orange);
+  color: var(--white);
+  transform: translateY(-2px);
+  outline: none;
+}
+
 .contact-button:hover,
 .contact-button:focus-visible {
   background: var(--accent-orange);
@@ -140,11 +162,19 @@ a {
   border: 1px solid var(--black);
 }
 
-.hero-title {
+.hero-heading {
   margin: 0;
   width: min(1806px, 71.1vw);
   max-width: calc(100vw - clamp(36px, 6vw, 160px));
   transform: translateX(calc(-1 * clamp(4px, 0.45vw, 12px)));
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  column-gap: clamp(18px, 3vw, 54px);
+}
+
+.hero-title {
+  margin: 0;
   font-family: "DrukWideBoldLocal", "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
   font-weight: 700;
   font-synthesis: none;
@@ -153,6 +183,13 @@ a {
   letter-spacing: 0;
   text-transform: none;
   text-align: left;
+  white-space: nowrap;
+}
+
+.hero-location {
+  padding-bottom: clamp(6px, 1.1vh, 18px);
+  font-size: clamp(11px, 1.3vw, 16px);
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
@@ -165,8 +202,8 @@ a {
   width: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: minmax(0, 0.98fr) minmax(0, 1.02fr);
-  grid-template-rows: auto auto;
+  grid-template-columns: minmax(0, 3.35fr) minmax(220px, 1fr);
+  grid-template-rows: auto;
   gap: 4px;
   font-size: clamp(11px, min(0.72vw, 1.38vh), 18px);
   line-height: 1.08;
@@ -184,26 +221,136 @@ a {
   overflow: hidden;
 }
 
-.hero .copy-block:nth-child(1) {
+.intro-stack {
   grid-column: 1;
   grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 0;
 }
 
-.hero .copy-block:nth-child(2) {
-  grid-column: 1;
-  grid-row: 2;
+.intro-block {
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  flex: 0 0 auto;
 }
 
-.hero .copy-block:nth-child(3) {
+.core-skills-block {
   grid-column: 2;
   grid-row: 1;
-  font-size: clamp(15px, min(0.98vw, 1.92vh), 24px);
-  line-height: 1.12;
+  font-size: clamp(12px, min(0.76vw, 1.35vh), 18px);
+  line-height: 1.08;
 }
 
-.hero .copy-block:nth-child(4) {
-  grid-column: 2;
-  grid-row: 2;
+.hero .key-strengths-panel {
+  width: 100%;
+  flex: 0 0 auto;
+  min-height: 0;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border-width: 0 1px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-18px);
+  transition: max-height 360ms ease, padding 360ms ease, opacity 260ms ease, transform 360ms ease;
+}
+
+.intro-stack.is-open .key-strengths-panel {
+  max-height: 260px;
+  padding-top: clamp(14px, 0.95vw, 24px);
+  padding-bottom: clamp(14px, 0.95vw, 24px);
+  border-width: 1px;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.key-strengths-toggle {
+  width: clamp(160px, 13vw, 210px);
+  height: 17px;
+  margin-top: -1px;
+  padding: 0;
+  border: 0;
+  border-radius: 0 0 6px 6px;
+  background: var(--accent-orange);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  transition: background 160ms ease, transform 180ms ease;
+}
+
+.key-strengths-toggle::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-right: 4px solid var(--black);
+  border-bottom: 4px solid var(--black);
+  transform: translateY(-4px) rotate(45deg);
+  transition: border-color 160ms ease, transform 180ms ease;
+}
+
+.key-strengths-toggle:hover,
+.key-strengths-toggle:focus-visible {
+  transform: translateY(2px);
+  outline: none;
+}
+
+.intro-stack.is-open .key-strengths-toggle {
+  background: var(--black);
+}
+
+.intro-stack.is-open .key-strengths-toggle::before {
+  border-color: var(--white);
+  transform: translateY(2px) rotate(225deg);
+}
+
+.availability-control {
+  z-index: 12;
+  white-space: normal;
+}
+
+.availability-popout {
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 14px);
+  width: min(720px, calc(100vw - 44px));
+  border: 1px solid #4d5154;
+  background: var(--panel-grey);
+  color: var(--black);
+  padding: clamp(16px, 1.15vw, 22px);
+  font-size: clamp(11px, min(0.68vw, 1.2vh), 16px);
+  line-height: 1.02;
+  text-transform: none;
+  white-space: normal;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px) scale(0.98);
+  transform-origin: bottom left;
+  transition: opacity 160ms ease, transform 180ms ease;
+}
+
+.availability-control:hover .availability-popout,
+.availability-control:focus-within .availability-popout {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.availability-popout h2 {
+  margin-bottom: clamp(8px, 0.85vh, 12px);
+}
+
+.availability-popout p {
+  margin-bottom: clamp(8px, 0.9vh, 12px);
+}
+
+.availability-popout p:last-child {
+  margin-bottom: 0;
 }
 
 .hero .copy-block h2,
@@ -224,19 +371,19 @@ a {
   align-items: start;
 }
 
-.hero .copy-block:nth-child(3) ul {
+.core-skills-block ul {
   display: grid;
-  gap: clamp(8px, 1vh, 13px);
+  gap: clamp(6px, 0.75vh, 10px);
 }
 
-.hero .copy-block:nth-child(3) li {
+.core-skills-block li {
   border: 1px solid #4d5154;
   background: #eeeeee;
-  padding: clamp(6px, 0.45vw, 10px) clamp(10px, 0.8vw, 18px);
+  padding: clamp(4px, 0.35vw, 8px) clamp(8px, 0.6vw, 14px);
   line-height: 1.05;
 }
 
-.hero .copy-block:nth-child(3) li::before {
+.core-skills-block li::before {
   content: none;
 }
 
@@ -893,6 +1040,19 @@ a {
     transform: none;
   }
 
+  .hero-heading {
+    width: min(100%, 740px);
+    max-width: calc(100vw - 34px);
+    transform: none;
+    grid-template-columns: 1fr;
+    row-gap: 4px;
+  }
+
+  .hero-location {
+    justify-self: end;
+    padding-bottom: 0;
+  }
+
   .hero-copy {
     width: min(100%, 740px);
     transform: none;
@@ -916,6 +1076,13 @@ a {
   .hero .copy-block:nth-child(3) {
     font-size: inherit;
     line-height: inherit;
+  }
+
+  .availability-popout {
+    width: calc(100vw - 36px);
+    max-height: min(48vh, 360px);
+    overflow: auto;
+    font-size: 11px;
   }
 
   .hero .copy-block:nth-child(3) ul {

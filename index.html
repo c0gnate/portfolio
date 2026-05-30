@@ -4,33 +4,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nate Portfolio</title>
-    <link rel="stylesheet" href="./styles.css?v=45">
+    <link rel="stylesheet" href="./styles.css?v=48">
   </head>
   <body class="home-body">
     <main>
       <section class="section hero" id="home" aria-label="Home">
-        <h1 class="hero-title">Nate</h1>
+        <div class="hero-heading">
+          <h1 class="hero-title">Nate</h1>
+          <div class="hero-location">ENGLAND, UK</div>
+        </div>
         <div class="hero-copy">
           <div class="about-copy">
-            <article class="copy-block">
-              <h2># Intro</h2>
-              <p>Designer/developer with experience building communities, content, and cultural identities for crypto projects across multiple ecosystems/platforms.</p>
-              <p>I specialise in turning early stage ideas into credible brands, through memetic strategy, social engagement, and design execution. My work has been shared and showcased by many prominent figures/ high engagement accounts across the internet, including Toly &amp; Raj (Solana Blockchain founders), Vibhu (Drip founder), Claynosaurs (Award-winning film studio), Solmane (Crypto OG), Waka Flocka Flame (BET Award winner) and many others. Placing my artwork/content in front of multiple millions of users.</p>
-              <p>I have contributed to project growth across NFTs, financial exchanges, community tokens, and online brands, including helping Cube Exchange strengthen its social presence and community during a key growth period leading up to a $300m acquisition, with trading activity reaching approximately $15,000 fee volume daily, whilst bolstering social media engagement up 60% reaching 1,000,000+ users.</p>
-            </article>
+            <div class="intro-stack">
+              <article class="copy-block intro-block">
+                <h2># Intro</h2>
+                <p>Designer/developer with experience building communities, content, and cultural identities for crypto projects across multiple ecosystems/platforms.</p>
+                <p>I specialise in turning early stage ideas into credible brands, through memetic strategy, social engagement, and design execution. My work has been shared and showcased by many prominent figures/ high engagement accounts across the internet, including Toly &amp; Raj (Solana Blockchain founders), Vibhu (Drip founder), Claynosaurs (Award-winning film studio), Solmane (Crypto OG), Waka Flocka Flame (BET Award winner) and many others. Placing my artwork/content in front of multiple millions of users.</p>
+                <p>I have contributed to project growth across NFTs, financial exchanges, community tokens, and online brands, including helping Cube Exchange strengthen its social presence and community during a key growth period leading up to a $300m acquisition, with trading activity reaching approximately $15,000 fee volume daily, whilst bolstering social media engagement up 60% reaching 1,000,000+ users.</p>
+              </article>
 
-          <article class="copy-block">
-            <h2># Key Strengths</h2>
-            <ul>
-              <li>Strong ability to create content that feels authentic, timely, and highly shareable.</li>
-              <li>Skilled at building hype without making communities feel forced or artificial.</li>
-              <li>Able to take rough ideas from concept to polished execution.</li>
-              <li>Comfortable working across design, content, community, product, and operations.</li>
-              <li>Deep understanding of crypto-native culture and online communities.</li>
-            </ul>
-          </article>
+              <article class="copy-block key-strengths-panel" id="key-strengths-panel">
+                <h2># Key Strengths</h2>
+                <ul>
+                  <li>Strong ability to create content that feels authentic, timely, and highly shareable.</li>
+                  <li>Skilled at building hype without making communities feel forced or artificial.</li>
+                  <li>Able to take rough ideas from concept to polished execution.</li>
+                  <li>Comfortable working across design, content, community, product, and operations.</li>
+                  <li>Deep understanding of crypto-native culture and online communities.</li>
+                </ul>
+              </article>
+              <button class="key-strengths-toggle" type="button" aria-expanded="false" aria-controls="key-strengths-panel" aria-label="Toggle key strengths"></button>
+            </div>
 
-          <article class="copy-block">
+          <article class="copy-block core-skills-block">
             <h2># Core Skills</h2>
             <div class="skills-grid">
               <div>
@@ -56,16 +62,18 @@
             </div>
           </article>
 
-          <article class="copy-block">
+          </div>
+        </div>
+        <a class="scroll-note" href="#experience">scroll down ↓</a>
+        <div class="availability-control corner bottom-left">
+          <button class="availability-button" type="button">AVAILABILITY</button>
+          <article class="availability-popout">
             <h2># Availability</h2>
             <p>I am available for remote work, community campaigns, content creation, project launches, and ongoing Web3 roles.</p>
             <p>I will also be in London for <strong>Solana Breakpoint</strong>, making me available for in-person networking, meetings, event support and project representation opportunities around the event.</p>
             <p>[References available on request.]</p>
           </article>
-          </div>
         </div>
-        <a class="scroll-note" href="#experience">scroll down ↓</a>
-        <div class="corner bottom-left">ENGLAND, UK</div>
         <a class="corner bottom-right contact-button" href="contact.html">CONTACT</a>
       </section>
 
@@ -191,6 +199,35 @@
         document.querySelectorAll("a, button").forEach((control) => {
           control.addEventListener("click", playClickSound);
         });
+
+        const keyStrengthsToggle = document.querySelector(".key-strengths-toggle");
+        const introStack = document.querySelector(".intro-stack");
+        let keyStrengthsTimer = 0;
+
+        const closeKeyStrengths = () => {
+          if (!introStack || !keyStrengthsToggle) return;
+          introStack.classList.remove("is-open");
+          keyStrengthsToggle.setAttribute("aria-expanded", "false");
+          window.clearTimeout(keyStrengthsTimer);
+        };
+
+        const openKeyStrengths = () => {
+          if (!introStack || !keyStrengthsToggle) return;
+          introStack.classList.add("is-open");
+          keyStrengthsToggle.setAttribute("aria-expanded", "true");
+          window.clearTimeout(keyStrengthsTimer);
+          keyStrengthsTimer = window.setTimeout(closeKeyStrengths, 120000);
+        };
+
+        if (keyStrengthsToggle && introStack) {
+          keyStrengthsToggle.addEventListener("click", () => {
+            if (introStack.classList.contains("is-open")) {
+              closeKeyStrengths();
+            } else {
+              openKeyStrengths();
+            }
+          });
+        }
       })();
 
       (() => {
