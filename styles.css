@@ -288,7 +288,7 @@ a {
 }
 
 .projects-section {
-  background: #fff;
+  background: #f1f1f1;
   display: grid;
   grid-template-columns: minmax(0, 1050px);
   align-content: center;
@@ -373,13 +373,14 @@ a {
   left: 0;
   top: 0;
   z-index: 30;
-  width: clamp(210px, 24vw, 330px);
+  width: var(--active-preview-width, clamp(130px, 14vw, 186px));
   aspect-ratio: 1 / 1;
   border: 1px solid rgba(3, 3, 3, 0.35);
   border-radius: 6px;
-  background-color: var(--yellow);
+  background-color: var(--accent-orange);
   background-position: center;
   background-size: cover;
+  background-repeat: no-repeat;
   box-shadow: 0 16px 40px rgba(3, 3, 3, 0.22);
   opacity: 0;
   pointer-events: none;
@@ -418,17 +419,20 @@ a {
 }
 
 .chads-card {
-  --project-image: url("./assets/chads.jpg");
+  --project-image: url("./assets/chads-preview.gif");
+  --preview-width: min(330px, 72vw);
+  --preview-aspect: 426 / 240;
+  --preview-fit: contain;
   --project-accent: var(--accent-orange);
 }
 
 .yes-card {
-  --project-image: url("./assets/$YES.gif");
+  --project-image: url("./assets/yes-preview.gif");
   --project-accent: #d6362f;
 }
 
 .mambo-card {
-  --project-image: url("./assets/mambo.gif");
+  --project-image: url("./assets/gmambo.png");
   --project-accent: #e3c13a;
 }
 
@@ -973,7 +977,7 @@ a {
   }
 
   .project-preview {
-    width: min(260px, 54vw);
+    width: var(--active-preview-width, min(150px, 31vw));
   }
 
   .project-card-title {
@@ -1170,7 +1174,7 @@ a {
   }
 
   .project-preview {
-    width: min(250px, 72vw);
+    width: var(--active-preview-width, min(145px, 42vw));
   }
 
   .project-card-title {

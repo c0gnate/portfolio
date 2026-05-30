@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nate Portfolio</title>
-    <link rel="stylesheet" href="./styles.css?v=37">
+    <link rel="stylesheet" href="./styles.css?v=45">
   </head>
   <body class="home-body">
     <main>
@@ -159,8 +159,19 @@
             activeProjectCard = card;
             card.classList.add("is-previewing");
             if (projectPreview) {
-              const image = getComputedStyle(card).getPropertyValue("--project-image").trim();
+              const cardStyle = getComputedStyle(card);
+              const image = cardStyle.getPropertyValue("--project-image").trim();
+              const aspectRatio = cardStyle.getPropertyValue("--preview-aspect").trim() || "1 / 1";
+              const imageFit = cardStyle.getPropertyValue("--preview-fit").trim() || "cover";
+              const previewWidth = cardStyle.getPropertyValue("--preview-width").trim();
               projectPreview.style.backgroundImage = image;
+              projectPreview.style.aspectRatio = aspectRatio;
+              projectPreview.style.backgroundSize = imageFit;
+              if (previewWidth) {
+                projectPreview.style.setProperty("--active-preview-width", previewWidth);
+              } else {
+                projectPreview.style.removeProperty("--active-preview-width");
+              }
               projectPreview.classList.add("is-visible");
             }
             playClickSound();
