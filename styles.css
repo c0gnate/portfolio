@@ -248,10 +248,10 @@ a {
 
 .project-card::after {
   content: "";
-  position: absolute;
-  z-index: 6;
-  left: 48%;
-  top: 50%;
+  position: fixed;
+  z-index: 20;
+  left: var(--preview-x, 50vw);
+  top: var(--preview-y, 50vh);
   width: clamp(210px, 24vw, 330px);
   aspect-ratio: 1 / 1;
   border: 1px solid rgba(3, 3, 3, 0.35);
@@ -265,6 +265,7 @@ a {
   pointer-events: none;
   transform: translate(-50%, -42%) scale(0.94);
   transition: opacity 220ms ease, transform 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform, opacity;
 }
 
 .project-card:hover,
@@ -358,15 +359,23 @@ a {
 }
 
 .project-plus {
-  width: clamp(28px, 3vw, 38px);
+  min-width: clamp(28px, 3vw, 38px);
   height: clamp(28px, 3vw, 38px);
+  padding: 0 8px;
   justify-self: center;
   display: grid;
   place-items: center;
   font-family: var(--heading-font);
+  font-size: 0;
+  line-height: 1;
+  white-space: nowrap;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.project-plus::after {
+  content: "+";
   font-size: clamp(22px, 2.4vw, 32px);
   line-height: 1;
-  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
 .project-plus:hover,
@@ -374,6 +383,12 @@ a {
   color: var(--black);
   transform: translateY(-2px);
   outline: none;
+}
+
+.project-plus:hover::after,
+.project-plus:focus-visible::after {
+  content: "CLICK FOR MORE";
+  font-size: clamp(11px, 1vw, 14px);
 }
 
 .more-section {
@@ -744,7 +759,7 @@ a {
   }
 
   .project-card::after {
-    left: 58%;
+    left: var(--preview-x, 50vw);
     width: min(260px, 54vw);
   }
 
@@ -915,9 +930,9 @@ a {
   }
 
   .project-card::after {
-    left: 50%;
+    left: var(--preview-x, 50vw);
     width: min(250px, 72vw);
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 1 / 1;
   }
 
   .project-card-title {
