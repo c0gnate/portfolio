@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nate Portfolio</title>
-    <link rel="stylesheet" href="./styles.css?v=23">
+    <link rel="stylesheet" href="./styles.css?v=25">
   </head>
   <body class="home-body">
     <main>
@@ -13,11 +13,11 @@
         <div class="hero-copy">
           <div class="about-copy">
             <article class="copy-block">
-            <h2># Intro</h2>
-            <p>Designer/developer with experience building communities, content, and cultural identities for crypto projects across multiple ecosystems/platforms.</p>
-            <p>I specialise in turning early stage ideas into credible brands, through memetic strategy, social engagement, and design execution. My work has been shared and showcased by many prominent figures/ high engagement accounts across the internet, including Toly &amp; Raj (Solana Blockchain founders), Vibhu (Drip founder), Claynosaurs (Award-winning film studio), Solmane (Crypto OG), Waka Flocka Flame (BET Award winner) and many others. Placing my artwork/content in front of multiple millions of users.</p>
-            <p>I have contributed to project growth across NFTs, financial exchanges, community tokens, and online brands, including helping Cube Exchange strengthen its social presence and community during a key growth period leading up to a $300m acquisition, with trading activity reaching approximately $15,000 fee volume daily, whilst bolstering social media engagement up 60% reaching 1,000,000+ users.</p>
-          </article>
+              <h2># Intro</h2>
+              <p>Designer/developer with experience building communities, content, and cultural identities for crypto projects across multiple ecosystems/platforms.</p>
+              <p>I specialise in turning early stage ideas into credible brands, through memetic strategy, social engagement, and design execution. My work has been shared and showcased by many prominent figures/ high engagement accounts across the internet, including Toly &amp; Raj (Solana Blockchain founders), Vibhu (Drip founder), Claynosaurs (Award-winning film studio), Solmane (Crypto OG), Waka Flocka Flame (BET Award winner) and many others. Placing my artwork/content in front of multiple millions of users.</p>
+              <p>I have contributed to project growth across NFTs, financial exchanges, community tokens, and online brands, including helping Cube Exchange strengthen its social presence and community during a key growth period leading up to a $300m acquisition, with trading activity reaching approximately $15,000 fee volume daily, whilst bolstering social media engagement up 60% reaching 1,000,000+ users.</p>
+            </article>
 
           <article class="copy-block">
             <h2># Key Strengths</h2>
@@ -105,31 +105,6 @@
 
     </main>
     <script>
-      (() => {
-        const title = document.querySelector(".hero-title");
-        if (!title) return;
-
-        const fitTitle = () => {
-          const isPhoneTitle = window.matchMedia("(max-width: 520px)").matches;
-          const isMobileTitle = window.matchMedia("(max-width: 860px)").matches;
-          title.style.setProperty("--hero-title-size", isPhoneTitle ? "46vw" : isMobileTitle ? "42vw" : "36vw");
-          const available = title.clientWidth;
-          const measured = title.scrollWidth;
-          if (!available || !measured) return;
-          const current = parseFloat(getComputedStyle(title).fontSize);
-          const next = current * (available / measured);
-          const maxByWidth = window.innerWidth * (isPhoneTitle ? 0.46 : isMobileTitle ? 0.42 : 0.36);
-          const maxByHeight = window.innerHeight * (isPhoneTitle ? 0.22 : isMobileTitle ? 0.26 : 0.36);
-          title.style.setProperty("--hero-title-size", `${Math.min(next, maxByWidth, maxByHeight)}px`);
-        };
-
-        window.addEventListener("resize", fitTitle);
-        if (document.fonts && document.fonts.ready) {
-          document.fonts.ready.then(fitTitle);
-        }
-        fitTitle();
-      })();
-
       (() => {
         const projectCards = document.querySelectorAll(".project-card");
         projectCards.forEach((card) => {
