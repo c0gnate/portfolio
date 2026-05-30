@@ -121,16 +121,20 @@ a {
 }
 
 .hero {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  padding-top: 18px;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  align-content: start;
+  justify-items: center;
+  gap: clamp(18px, 4.5vh, 54px);
+  min-height: 100vh;
+  padding-top: clamp(14px, 1.8vw, 24px);
+  padding-bottom: clamp(74px, 8vh, 100px);
 }
 
 .hero-title {
-  --hero-title-size: 60vw;
+  --hero-title-size: min(36vw, 36vh);
   margin: 0;
-  width: calc(100vw - clamp(28px, 5vw, 76px));
+  width: calc(100vw - clamp(64px, 10vw, 150px));
   font-family: "DrukWideBoldLocal", "Druk Extra Wide", "DrukWide", "Druk Wide", var(--heading-font);
   font-weight: 700;
   font-synthesis: none;
@@ -140,6 +144,34 @@ a {
   text-transform: none;
   text-align: center;
   white-space: nowrap;
+}
+
+.hero-copy {
+  width: min(980px, 82vw);
+  align-self: start;
+}
+
+.hero .about-copy {
+  width: 100%;
+  margin: 0;
+  font-size: clamp(9px, min(0.78vw, 1.22vh), 13.5px);
+  line-height: 1.15;
+  color: #000;
+  text-shadow: none;
+  -webkit-text-stroke: 0;
+}
+
+.hero .copy-block {
+  margin-bottom: clamp(10px, 1.8vh, 18px);
+}
+
+.hero .copy-block h2,
+.hero .copy-block h3 {
+  margin-bottom: clamp(5px, 0.9vh, 10px);
+}
+
+.hero .copy-block p {
+  margin-bottom: clamp(6px, 1.2vh, 10px);
 }
 
 .about-section {
@@ -701,13 +733,29 @@ a {
   }
 
   .hero {
-    align-items: center;
+    align-content: start;
+    gap: 24px;
     min-height: 100svh;
+    padding-top: 24px;
+    padding-bottom: 78px;
   }
 
   .hero-title {
-    --hero-title-size: 43vw;
-    width: calc(100vw - 32px);
+    --hero-title-size: 42vw;
+    width: calc(100vw - 48px);
+  }
+
+  .hero-copy {
+    width: min(100%, 680px);
+  }
+
+  .hero .about-copy {
+    font-size: clamp(8.8px, 1.45vw, 12px);
+    line-height: 1.18;
+  }
+
+  .hero .copy-block {
+    margin-bottom: 16px;
   }
 
   .about-copy {
@@ -850,9 +898,28 @@ a {
   }
 
   .hero-title {
-    --hero-title-size: 16vw;
-    width: calc(100vw - 24px);
+    --hero-title-size: 46vw;
+    width: calc(100vw - 32px);
     line-height: 0.8;
+  }
+
+  .hero {
+    gap: 18px;
+    padding-top: 18px;
+    padding-bottom: 70px;
+  }
+
+  .hero-copy {
+    width: 100%;
+  }
+
+  .hero .about-copy {
+    font-size: clamp(8.4px, 2.25vw, 11px);
+    line-height: 1.17;
+  }
+
+  .hero .copy-block {
+    margin-bottom: 12px;
   }
 
   .top-right {

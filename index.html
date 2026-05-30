@@ -4,20 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nate Portfolio</title>
-    <link rel="stylesheet" href="./styles.css?v=22">
+    <link rel="stylesheet" href="./styles.css?v=23">
   </head>
   <body class="home-body">
     <main>
       <section class="section hero" id="home" aria-label="Home">
         <h1 class="hero-title">Nate</h1>
-        <a class="scroll-note" href="#about">scroll down ↓</a>
-        <div class="corner bottom-left">ENGLAND, UK</div>
-        <a class="corner bottom-right contact-button" href="contact.html">CONTACT</a>
-      </section>
-
-      <section class="section about-section" id="about" aria-label="Intro and skills">
-        <div class="about-copy">
-          <article class="copy-block">
+        <div class="hero-copy">
+          <div class="about-copy">
+            <article class="copy-block">
             <h2># Intro</h2>
             <p>Designer/developer with experience building communities, content, and cultural identities for crypto projects across multiple ecosystems/platforms.</p>
             <p>I specialise in turning early stage ideas into credible brands, through memetic strategy, social engagement, and design execution. My work has been shared and showcased by many prominent figures/ high engagement accounts across the internet, including Toly &amp; Raj (Solana Blockchain founders), Vibhu (Drip founder), Claynosaurs (Award-winning film studio), Solmane (Crypto OG), Waka Flocka Flame (BET Award winner) and many others. Placing my artwork/content in front of multiple millions of users.</p>
@@ -67,8 +62,11 @@
             <p>I will also be in London for <strong>Solana Breakpoint</strong>, making me available for in-person networking, meetings, event support and project representation opportunities around the event.</p>
             <p>[References available on request.]</p>
           </article>
+          </div>
         </div>
         <a class="scroll-note" href="#experience">scroll down ↓</a>
+        <div class="corner bottom-left">ENGLAND, UK</div>
+        <a class="corner bottom-right contact-button" href="contact.html">CONTACT</a>
       </section>
 
       <section class="section projects-section" id="experience" aria-label="Professional experience">
@@ -113,14 +111,16 @@
 
         const fitTitle = () => {
           const isPhoneTitle = window.matchMedia("(max-width: 520px)").matches;
-          title.style.setProperty("--hero-title-size", isPhoneTitle ? "16vw" : "60vw");
+          const isMobileTitle = window.matchMedia("(max-width: 860px)").matches;
+          title.style.setProperty("--hero-title-size", isPhoneTitle ? "46vw" : isMobileTitle ? "42vw" : "36vw");
           const available = title.clientWidth;
           const measured = title.scrollWidth;
           if (!available || !measured) return;
           const current = parseFloat(getComputedStyle(title).fontSize);
           const next = current * (available / measured);
-          const mobileTitleScale = isPhoneTitle ? 0.15 : 0.42;
-          title.style.setProperty("--hero-title-size", `${Math.min(next, window.innerWidth * mobileTitleScale)}px`);
+          const maxByWidth = window.innerWidth * (isPhoneTitle ? 0.46 : isMobileTitle ? 0.42 : 0.36);
+          const maxByHeight = window.innerHeight * (isPhoneTitle ? 0.22 : isMobileTitle ? 0.26 : 0.36);
+          title.style.setProperty("--hero-title-size", `${Math.min(next, maxByWidth, maxByHeight)}px`);
         };
 
         window.addEventListener("resize", fitTitle);
