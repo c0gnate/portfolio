@@ -4,23 +4,50 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nate Portfolio</title>
-    <link rel="stylesheet" href="./styles.css?v=48">
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./styles.css?v=52">
   </head>
   <body class="home-body">
     <main>
       <section class="section hero" id="home" aria-label="Home">
         <div class="hero-heading">
           <h1 class="hero-title">Nate</h1>
-          <div class="hero-location">ENGLAND, UK</div>
+          <div class="hero-location"><span class="england-flag" aria-hidden="true"></span>ENGLAND, UK</div>
         </div>
         <div class="hero-copy">
           <div class="about-copy">
             <div class="intro-stack">
+              <button class="story-toggle" type="button" aria-expanded="false" aria-controls="story-panel" aria-label="Toggle background detail"></button>
               <article class="copy-block intro-block">
                 <h2># Intro</h2>
                 <p>Designer, developer & Brand Strategist with extensive experience building and scaling communities, for crypto projects across multiple ecosystems & platforms.</p>
-                <p>I specialise in scaling early stage communities into credible brands, through memetic strategy, social engagement, and design execution. My work has been shared and showcased by many prominent figures & high engagement accounts across the internet, including Toly & Raj (Solana Blockchain founders), Vibhu (Drip founder), Claynosaurs (Award-winning film studio), Solmane (Crypto OG), Waka Flocka Flame (BET Award winner) and many others. My designs and content are regularly seen by millions of users across the internet.</p>
                 <p>I have contributed to project growth across projects of all sizes and verticals, from financial exchanges, token launches, NFT communities and leading online brands. WIth Cube Exchange, I was tasked with developing their   social presence and community during a key growth period leading up to a $300m acquisition., My work engaged a community of 1m users, increasing social media engagement by 60% and reaching approximately $15K fee volume daily.</p>
+                <div class="intro-skills">
+                  <div>
+                    <h3>Creative Skills</h3>
+                    <ul>
+                      <li>Creative Strategy</li>
+                      <li>Graphic Design</li>
+                      <li>Brand Identity</li>
+                      <li>Motion Graphics</li>
+                      <li>Social Media Management</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3>Technical Skills</h3>
+                    <ul>
+                      <li>Photoshop/AE</li>
+                      <li>Web Development</li>
+                      <li>HTML/CSS</li>
+                      <li>JavaScript/Python</li>
+                      <li>Next.js/React Workflows</li>
+                    </ul>
+                  </div>
+                </div>
+              </article>
+
+              <article class="copy-block story-panel" id="story-panel">
+                <p>I specialise in scaling early stage communities into credible brands, through memetic strategy, social engagement, and design execution. My work has been shared and showcased by many prominent figures &amp; high engagement accounts across the internet, including <a class="story-link" href="https://x.com/aeyakovenko" target="_blank" rel="noopener noreferrer">Toly</a> &amp; <a class="story-link" href="https://x.com/rajgokal" target="_blank" rel="noopener noreferrer">Raj</a> (Solana Blockchain founders), <a class="story-link" href="https://x.com/vibhu" target="_blank" rel="noopener noreferrer">Vibhu</a> (Drip founder), <a class="story-link" href="https://x.com/claynosaurz" target="_blank" rel="noopener noreferrer">Claynosaurs</a> (Award-winning film studio), <a class="story-link" href="https://x.com/solsman" target="_blank" rel="noopener noreferrer">Solmane</a> (Crypto OG), <a class="story-link" href="https://x.com/WakaFlocka" target="_blank" rel="noopener noreferrer">Waka Flocka Flame</a> (BET Award winner) and many others. My designs and content are regularly seen by millions of users across the internet.</p>
               </article>
 
               <article class="copy-block key-strengths-panel" id="key-strengths-panel">
@@ -35,33 +62,6 @@
               </article>
               <button class="key-strengths-toggle" type="button" aria-expanded="false" aria-controls="key-strengths-panel" aria-label="Toggle key strengths"></button>
             </div>
-
-          <article class="copy-block core-skills-block">
-            <h2># Core Skills</h2>
-            <div class="skills-grid">
-              <div>
-                <h3>## Creative</h3>
-                <ul>
-                  <li>Creative Strategy</li>
-                  <li>Graphic Design</li>
-                  <li>Brand Identity</li>
-                  <li>Motion Graphics</li>
-                  <li>Social Media Management</li>
-                </ul>
-              </div>
-              <div>
-                <h3>## Technical</h3>
-                <ul>
-                  <li>Photoshop/AE</li>
-                  <li>Web Development</li>
-                  <li>HTML/CSS</li>
-                  <li>JavaScript/Python</li>
-                  <li>Next.js/React Workflows</li>
-                </ul>
-              </div>
-            </div>
-          </article>
-
           </div>
         </div>
         <a class="scroll-note" href="#experience">scroll down ↓</a>
@@ -113,7 +113,15 @@
         </div>
         <a class="project-plus" href="independent-projects.html" aria-label="Open independent projects page">+</a>
         <a class="scroll-note" href="#home">back to top ↑</a>
-        <div class="corner bottom-left">NATE</div>
+        <div class="availability-control corner bottom-left">
+          <button class="availability-button" type="button">AVAILABILITY</button>
+          <article class="availability-popout">
+            <h2># Availability</h2>
+            <p>I am available for remote work, community campaigns, content creation, project launches, and ongoing Web3 roles.</p>
+            <p>I will also be in London for <strong>Solana Breakpoint</strong>, making me available for in-person networking, meetings, event support and project representation opportunities around the event.</p>
+            <p>[References available on request.]</p>
+          </article>
+        </div>
         <a class="corner bottom-right contact-button" href="contact.html">CONTACT</a>
       </section>
 
@@ -201,8 +209,10 @@
         });
 
         const keyStrengthsToggle = document.querySelector(".key-strengths-toggle");
+        const storyToggle = document.querySelector(".story-toggle");
         const introStack = document.querySelector(".intro-stack");
         let keyStrengthsTimer = 0;
+        let storyTimer = 0;
 
         const closeKeyStrengths = () => {
           if (!introStack || !keyStrengthsToggle) return;
@@ -219,12 +229,37 @@
           keyStrengthsTimer = window.setTimeout(closeKeyStrengths, 120000);
         };
 
+        const closeStory = () => {
+          if (!introStack || !storyToggle) return;
+          introStack.classList.remove("is-story-open");
+          storyToggle.setAttribute("aria-expanded", "false");
+          window.clearTimeout(storyTimer);
+        };
+
+        const openStory = () => {
+          if (!introStack || !storyToggle) return;
+          introStack.classList.add("is-story-open");
+          storyToggle.setAttribute("aria-expanded", "true");
+          window.clearTimeout(storyTimer);
+          storyTimer = window.setTimeout(closeStory, 120000);
+        };
+
         if (keyStrengthsToggle && introStack) {
           keyStrengthsToggle.addEventListener("click", () => {
             if (introStack.classList.contains("is-open")) {
               closeKeyStrengths();
             } else {
               openKeyStrengths();
+            }
+          });
+        }
+
+        if (storyToggle && introStack) {
+          storyToggle.addEventListener("click", () => {
+            if (introStack.classList.contains("is-story-open")) {
+              closeStory();
+            } else {
+              openStory();
             }
           });
         }
